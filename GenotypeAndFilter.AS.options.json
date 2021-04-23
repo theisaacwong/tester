@@ -1,0 +1,12 @@
+{
+  "read_from_cache": true,
+  "write_to_cache": true,
+  "jes_gcs_root": "gs://broad-pharma5-execution1/",
+  "google_project": "broad-pharma5-compute1",
+  "default_runtime_attributes": {
+    "zones": "us-central1-a us-central1-b us-east1-d us-central1-c us-central1-f us-east1-c",
+    "docker": "us.gcr.io/broad-gotc-prod/genomes-in-the-cloud:2.4.3-1564508330",
+    "noAddress": true
+  },
+  "backend": "PAPIv2"
+}

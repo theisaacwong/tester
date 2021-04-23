@@ -1,0 +1,16 @@
+#!/bin/sh -ex
+
+GOOGLE_PROJECT=$1
+CLUSTER_NAME=$2
+INPUT_MATRIX_TABLE=$3
+OUTPUT_DIRECTORY=$4
+DATA_TYPE=$5
+CALL_SET_NAME=$6
+PARTITIONS=$7
+
+CLOUDSDK_CORE_PROJECT=${GOOGLE_PROJECT} hailctl dataproc submit \
+    ${CLUSTER_NAME} \
+    /mt_to_vcf.py \
+    -i ${INPUT_MATRIX_TABLE} -o ${OUTPUT_DIRECTORY} \
+    -d ${DATA_TYPE} -np ${PARTITIONS} \
+    --overwrite -c ${CALL_SET_NAME}
